@@ -5,7 +5,7 @@ import com.showcase.cricksquad.repository.model.BattingEntity
 import com.showcase.cricksquad.repository.model.BowlingEntity
 import com.showcase.cricksquad.repository.model.PlayerEntity
 import com.showcase.cricksquad.repository.model.TeamEntity
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 
 /**
  * This class converts the json values from server to network entity
@@ -18,7 +18,7 @@ class CricketRemote(
 
     override fun getSquadList(): Single<List<TeamEntity>> {
         return service.getSquad()
-            .map { it?.toTeamList() }
+            .map { it.toTeamList() }
     }
 
     private fun SquadSchema.toTeamList(): List<TeamEntity> {

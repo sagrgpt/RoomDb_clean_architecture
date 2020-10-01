@@ -1,7 +1,7 @@
 package com.showcase.cricksquad.repository
 
 import com.showcase.cricksquad.repository.model.TeamEntity
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 
 interface CricketDataSource {
 

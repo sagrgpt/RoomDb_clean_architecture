@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.showcase.cricksquad.R
 import com.showcase.cricksquad.network.NetworkFactory
-import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
