@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.showcase.cricksquad.R
 import com.showcase.cricksquad.database.DatabaseFactory
+import com.showcase.cricksquad.di.CompositionRoot
 import com.showcase.cricksquad.network.NetworkFactory
 import com.showcase.cricksquad.repository.CricketRepository
 import io.reactivex.schedulers.Schedulers
@@ -12,11 +13,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var compositionRoot: CompositionRoot
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val networkGateway = NetworkFactory.createGateway()
+        compositionRoot = CompositionRoot(applicationContext)
+        /*val networkGateway = NetworkFactory.createGateway()
         val localGateway = DatabaseFactory.getGateway(this)
         val repository = CricketRepository(
             networkGateway.getCricketRemote(),
@@ -27,6 +30,10 @@ class MainActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe { Log.v("MainActivity", "$it") }
-        }
+        }*/
+    }
+
+    fun getCompositionRoot(): CompositionRoot {
+        return compositionRoot
     }
 }
