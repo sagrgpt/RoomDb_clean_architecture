@@ -20,6 +20,11 @@ class HomeViewModel(
     private val teamLiveData = MutableLiveData<List<Team>>()
     private val profileLiveData = MutableLiveData<ProfileViewState>()
 
+    override fun onCleared() {
+        super.onCleared()
+        disposables.dispose()
+    }
+
     fun init() {
         disposables.add(
             repository.getAllTeams()
@@ -47,11 +52,6 @@ class HomeViewModel(
     fun team(): LiveData<List<Team>> = teamLiveData
 
     fun profile(): LiveData<ProfileViewState> = profileLiveData
-
-    override fun onCleared() {
-        super.onCleared()
-        disposables.dispose()
-    }
 
     private fun PlayerProfile.toViewState(teamName: String): ProfileViewState {
         return ProfileViewState(
