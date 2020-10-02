@@ -1,9 +1,9 @@
-package com.showcase.cricksquad.database
+package com.showcase.cricksquad.database.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [Team::class, Player::class], version = 1)
+@Database(entities = [TeamDbo::class, PlayerDbo::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getTeamDao(): TeamDao
 }

@@ -1,6 +1,6 @@
 package com.showcase.cricksquad.network
 
-import com.showcase.cricksquad.repository.DataSourceGateway
+import com.showcase.cricksquad.NetworkGateway
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,8 +15,8 @@ object NetworkFactory {
 
     private const val baseUrl = "https://cricket.yahoo.net/"
 
-    fun createGateway(): DataSourceGateway {
-        return NetworkGateway(getRemoteService())
+    fun createGateway(): NetworkGateway {
+        return RemoteGateway(getRemoteService())
     }
 
     private fun getRemoteService(): CricketService {

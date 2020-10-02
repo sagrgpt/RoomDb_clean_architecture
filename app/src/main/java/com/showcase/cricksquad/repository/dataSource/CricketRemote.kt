@@ -1,9 +1,9 @@
-package com.showcase.cricksquad.repository
+package com.showcase.cricksquad.repository.dataSource
 
 import com.showcase.cricksquad.repository.model.TeamEntity
 import io.reactivex.Single
 
-interface CricketDataSource {
+interface CricketRemote {
 
     /**
      * @return A list of teams in a match

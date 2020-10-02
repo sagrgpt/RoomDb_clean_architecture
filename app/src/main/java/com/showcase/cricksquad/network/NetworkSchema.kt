@@ -33,22 +33,22 @@ data class PlayerSchema(
 
 data class BattingSchema(
     @SerializedName("Average")
-    val average: String = "",
+    val average: String = "0.0",
     @SerializedName("Runs")
-    val runs: String = "",
+    val runs: String = "0",
     @SerializedName("Strikerate")
-    val strikerate: Float = 0f,
+    val strikerate: String = "0",
     @SerializedName("Style")
     val style: String = ""
 )
 
 data class BowlingSchema(
     @SerializedName("Average")
-    val average: String = "",
+    val average: String = "0.0",
     @SerializedName("Economyrate")
-    val economyrate: Float = 0f,
+    val economyrate: String = "0.0",
     @SerializedName("Style")
     val style: String = "",
     @SerializedName("Wickets")
-    val wickets: String = ""
+    val wickets: String = "0"
 )

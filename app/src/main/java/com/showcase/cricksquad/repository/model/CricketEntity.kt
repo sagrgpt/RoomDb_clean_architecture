@@ -13,6 +13,7 @@ data class TeamEntity(
 
 data class PlayerEntity(
     val id: Long,
+    val teamId: Long,
     val nameFull: String,
     val position: String,
     val isCaptain: Boolean,
@@ -22,15 +23,15 @@ data class PlayerEntity(
 )
 
 data class BattingEntity(
-    val average: String,
-    val runs: String,
+    val average: Float,
+    val runs: Int,
     val strikeRate: Float,
     val style: String
 )
 
 data class BowlingEntity(
-    val average: String,
+    val average: Float,
     val economyRate: Float,
     val style: String,
-    val wickets: String
+    val wickets: Int
 )

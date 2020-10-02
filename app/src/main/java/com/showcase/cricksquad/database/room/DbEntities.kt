@@ -1,9 +1,9 @@
-package com.showcase.cricksquad.database
+package com.showcase.cricksquad.database.room
 
 import androidx.room.*
 
 @Entity(tableName = "teams_table")
-data class Team (
+data class TeamDbo (
     @PrimaryKey
     @ColumnInfo(name="team_id")
     val id: Long,
@@ -14,7 +14,7 @@ data class Team (
 )
 
 @Entity(tableName = "players_table")
-data class Player(
+data class PlayerDbo(
     @PrimaryKey
     @ColumnInfo(name= "player_id")
     val id: Long,
@@ -27,11 +27,11 @@ data class Player(
     val isCaptain: Boolean,
     @ColumnInfo(name = "is_keeper")
     val isKeeper: Boolean,
-    @Embedded val batting: BattingStats,
-    @Embedded val bowling: BowlingStats
+    @Embedded val batting: BattingStatsDbo,
+    @Embedded val bowling: BowlingStatsDbo
 )
 
-data class BattingStats(
+data class BattingStatsDbo(
     @ColumnInfo(name = "batting_average")
     val average: Float,
     val runs: Int,
@@ -41,7 +41,7 @@ data class BattingStats(
     val style: String,
 )
 
-data class BowlingStats(
+data class BowlingStatsDbo(
     @ColumnInfo(name="bowling_avg")
     val average: Float,
     @ColumnInfo(name="economy_rate")
@@ -53,10 +53,10 @@ data class BowlingStats(
 )
 
 data class TeamWithPlayers(
-    @Embedded val team: Team,
+    @Embedded val team: TeamDbo,
     @Relation(
         parentColumn = "team_id",
         entityColumn = "player_team_id"
     )
-    val players: List<Player>
+    val players: List<PlayerDbo>
 )

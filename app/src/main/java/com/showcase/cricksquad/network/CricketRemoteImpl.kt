@@ -1,6 +1,6 @@
 package com.showcase.cricksquad.network
 
-import com.showcase.cricksquad.repository.CricketDataSource
+import com.showcase.cricksquad.repository.dataSource.CricketRemote
 import com.showcase.cricksquad.repository.model.BattingEntity
 import com.showcase.cricksquad.repository.model.BowlingEntity
 import com.showcase.cricksquad.repository.model.PlayerEntity
@@ -12,9 +12,9 @@ import io.reactivex.Single
  * @param service: The service needed for api communication
  * @see [CricketService]
  */
-class CricketRemote(
+class CricketRemoteImpl(
     private val service: CricketService
-) : CricketDataSource {
+) : CricketRemote {
 
     override fun getSquadList(): Single<List<TeamEntity>> {
         return service.getSquad()
@@ -34,7 +34,7 @@ class CricketRemote(
         val playerList: MutableList<PlayerEntity> = mutableListOf()
         for (playerId in players.keys)
             players[playerId]
-                ?.toPlayerEntity(playerId)
+                ?.toPlayerEntity(playerId, id)
                 ?.also { playerList.add(it) }
         return TeamEntity(
             id,
@@ -44,9 +44,10 @@ class CricketRemote(
         )
     }
 
-    private fun PlayerSchema.toPlayerEntity(id: Long): PlayerEntity {
+    private fun PlayerSchema.toPlayerEntity(id: Long, teamId: Long): PlayerEntity {
         return PlayerEntity(
             id,
+            teamId,
             nameFull,
             position,
             isCaptain,
@@ -57,10 +58,20 @@ class CricketRemote(
     }
 
     private fun BattingSchema.toEntity(): BattingEntity {
-        return BattingEntity(average, runs, strikerate, style)
+        return BattingEntity(
+            average.toFloatOrNull() ?: 0f,
+            runs.toIntOrNull() ?: 0,
+            strikerate.toFloatOrNull() ?: 0f,
+            style
+        )
     }
 
     private fun BowlingSchema.toEntity(): BowlingEntity {
-        return BowlingEntity(average, economyrate, style, wickets)
+        return BowlingEntity(
+            average.toFloatOrNull() ?: 0f,
+            economyrate.toFloatOrNull() ?: 0f,
+            style,
+            wickets.toIntOrNull() ?: 0
+        )
     }
 }
