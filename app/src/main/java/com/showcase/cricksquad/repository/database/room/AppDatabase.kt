@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.database.room
+package com.showcase.cricksquad.repository.database.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

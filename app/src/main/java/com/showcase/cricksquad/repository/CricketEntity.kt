@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.repository.model
+package com.showcase.cricksquad.repository
 
 /**
  * A data model that should be returned from any data source.

@@ -8,6 +8,7 @@ import com.showcase.cricksquad.PlayerProfile
 import com.showcase.cricksquad.Team
 import com.showcase.cricksquad.repository.CricketRepository
 import com.showcase.cricksquad.schedulers.SchedulerProvider
+import com.showcase.cricksquad.ui.profile.ProfileViewState
 import io.reactivex.disposables.CompositeDisposable
 
 class HomeViewModel(
@@ -29,16 +30,17 @@ class HomeViewModel(
     }
 
     fun viewProfile(id: Long) {
-        disposables.add(repository.getProfile(id)
-            .flatMap { player ->
-                repository.getTeam(player.details.teamId)
-                    .map { player.toViewState(it.fullName) }
-            }
-            .subscribeOn(scheduler.io)
-            .observeOn(scheduler.ui)
-            .subscribe { t1 ->
-                profileLiveData.value = t1
-            }
+        disposables.add(
+            repository.getProfile(id)
+                .flatMap { player ->
+                    repository.getTeam(player.details.teamId)
+                        .map { player.toViewState(it.fullName) }
+                }
+                .subscribeOn(scheduler.io)
+                .observeOn(scheduler.ui)
+                .subscribe { t1 ->
+                    profileLiveData.value = t1
+                }
         )
     }
 
@@ -73,7 +75,7 @@ class HomeViewModel(
 class HomeVmFactory(
     private val scheduler: SchedulerProvider,
     private val repository: CricketRepository
-): ViewModelProvider.Factory {
+) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

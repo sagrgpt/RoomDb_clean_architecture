@@ -1,10 +1,10 @@
 package com.showcase.cricksquad.di
 
 import android.content.Context
-import com.showcase.cricksquad.CacheGateway
-import com.showcase.cricksquad.NetworkGateway
-import com.showcase.cricksquad.database.DatabaseFactory
-import com.showcase.cricksquad.network.NetworkFactory
+import com.showcase.cricksquad.repository.CacheGateway
+import com.showcase.cricksquad.repository.NetworkGateway
+import com.showcase.cricksquad.repository.database.DatabaseFactory
+import com.showcase.cricksquad.repository.network.NetworkFactory
 import com.showcase.cricksquad.schedulers.DefaultScheduler
 import com.showcase.cricksquad.schedulers.SchedulerProvider
 

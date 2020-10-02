@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.ui
+package com.showcase.cricksquad.ui.profile
 
 data class ProfileViewState(
     val id: Long,

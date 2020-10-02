@@ -4,10 +4,6 @@ import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
 import com.showcase.cricksquad.repository.dataSource.CricketCache
 import com.showcase.cricksquad.repository.dataSource.CricketRemote
-import com.showcase.cricksquad.repository.model.BattingEntity
-import com.showcase.cricksquad.repository.model.BowlingEntity
-import com.showcase.cricksquad.repository.model.PlayerEntity
-import com.showcase.cricksquad.repository.model.TeamEntity
 import io.reactivex.Observable
 import io.reactivex.Single
 import org.junit.Before

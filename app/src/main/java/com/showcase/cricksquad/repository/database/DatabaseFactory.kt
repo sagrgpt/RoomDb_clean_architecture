@@ -1,9 +1,9 @@
-package com.showcase.cricksquad.database
+package com.showcase.cricksquad.repository.database
 
 import android.content.Context
 import androidx.room.Room
-import com.showcase.cricksquad.CacheGateway
-import com.showcase.cricksquad.database.room.AppDatabase
+import com.showcase.cricksquad.repository.CacheGateway
+import com.showcase.cricksquad.repository.database.room.AppDatabase
 
 object DatabaseFactory {
 

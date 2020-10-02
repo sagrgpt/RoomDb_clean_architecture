@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.ui
+package com.showcase.cricksquad.ui.squads
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,6 +1,6 @@
-package com.showcase.cricksquad.network
+package com.showcase.cricksquad.repository.network
 
-import com.showcase.cricksquad.NetworkGateway
+import com.showcase.cricksquad.repository.NetworkGateway
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

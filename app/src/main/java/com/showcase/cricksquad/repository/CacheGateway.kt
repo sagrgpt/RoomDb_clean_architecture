@@ -1,4 +1,4 @@
-package com.showcase.cricksquad
+package com.showcase.cricksquad.repository
 
 import com.showcase.cricksquad.repository.dataSource.CricketCache
 

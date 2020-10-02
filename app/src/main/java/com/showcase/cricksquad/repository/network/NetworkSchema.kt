@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.network
+package com.showcase.cricksquad.repository.network
 
 import com.google.gson.annotations.SerializedName
 

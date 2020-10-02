@@ -1,6 +1,6 @@
-package com.showcase.cricksquad.network
+package com.showcase.cricksquad.repository.network
 
-import com.showcase.cricksquad.NetworkGateway
+import com.showcase.cricksquad.repository.NetworkGateway
 import com.showcase.cricksquad.repository.dataSource.CricketRemote
 
 class RemoteGateway(

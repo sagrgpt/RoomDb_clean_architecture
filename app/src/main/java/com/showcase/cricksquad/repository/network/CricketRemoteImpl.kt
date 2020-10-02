@@ -1,10 +1,10 @@
-package com.showcase.cricksquad.network
+package com.showcase.cricksquad.repository.network
 
 import com.showcase.cricksquad.repository.dataSource.CricketRemote
-import com.showcase.cricksquad.repository.model.BattingEntity
-import com.showcase.cricksquad.repository.model.BowlingEntity
-import com.showcase.cricksquad.repository.model.PlayerEntity
-import com.showcase.cricksquad.repository.model.TeamEntity
+import com.showcase.cricksquad.repository.BattingEntity
+import com.showcase.cricksquad.repository.BowlingEntity
+import com.showcase.cricksquad.repository.PlayerEntity
+import com.showcase.cricksquad.repository.TeamEntity
 import io.reactivex.Single
 
 /**

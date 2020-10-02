@@ -1,8 +1,6 @@
-package com.showcase.cricksquad.database.room
+package com.showcase.cricksquad.repository.database.room
 
 import androidx.room.*
-import io.reactivex.Completable
-import io.reactivex.Observable
 import io.reactivex.Single
 
 @Dao

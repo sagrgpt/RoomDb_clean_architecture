@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.repository.model
+package com.showcase.cricksquad.repository
 
 /**
  * An exception wrapper for network module

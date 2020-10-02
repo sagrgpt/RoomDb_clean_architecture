@@ -1,4 +1,4 @@
-package com.showcase.cricksquad.ui
+package com.showcase.cricksquad.ui.squads
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.showcase.cricksquad.Player
 import com.showcase.cricksquad.R
+import com.showcase.cricksquad.ui.HomeActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class SquadFragment : Fragment() {

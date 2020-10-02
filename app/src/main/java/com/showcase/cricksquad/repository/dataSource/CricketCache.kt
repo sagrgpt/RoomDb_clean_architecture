@@ -1,8 +1,7 @@
 package com.showcase.cricksquad.repository.dataSource
 
-import com.showcase.cricksquad.repository.model.PlayerEntity
-import com.showcase.cricksquad.repository.model.TeamEntity
-import io.reactivex.Completable
+import com.showcase.cricksquad.repository.PlayerEntity
+import com.showcase.cricksquad.repository.TeamEntity
 import io.reactivex.Observable
 import io.reactivex.Single
 

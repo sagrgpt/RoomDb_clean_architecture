@@ -6,6 +6,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.showcase.cricksquad.R
 import com.showcase.cricksquad.Team
 import com.showcase.cricksquad.ui.common.BaseActivity
+import com.showcase.cricksquad.ui.profile.ProfileBottomSheet
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.showcase.cricksquad
+package com.showcase.cricksquad.ui.common
 
 import android.app.Application
 import com.showcase.cricksquad.di.CompositionRoot

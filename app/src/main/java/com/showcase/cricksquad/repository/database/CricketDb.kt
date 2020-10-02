@@ -1,13 +1,11 @@
-package com.showcase.cricksquad.database
+package com.showcase.cricksquad.repository.database
 
-import android.util.Log
-import com.showcase.cricksquad.database.room.*
+import com.showcase.cricksquad.repository.database.room.*
 import com.showcase.cricksquad.repository.dataSource.CricketCache
-import com.showcase.cricksquad.repository.model.BattingEntity
-import com.showcase.cricksquad.repository.model.BowlingEntity
-import com.showcase.cricksquad.repository.model.PlayerEntity
-import com.showcase.cricksquad.repository.model.TeamEntity
-import io.reactivex.Completable
+import com.showcase.cricksquad.repository.BattingEntity
+import com.showcase.cricksquad.repository.BowlingEntity
+import com.showcase.cricksquad.repository.PlayerEntity
+import com.showcase.cricksquad.repository.TeamEntity
 import io.reactivex.Observable
 import io.reactivex.Single
 
