@@ -1,6 +1,6 @@
 package com.showcase.cricksquad.di
 
-import com.showcase.cricksquad.ui.SquadFragment
+import com.showcase.cricksquad.ui.HomeActivity
 
 
 /**
@@ -14,12 +14,12 @@ class Injector(private val presentationRoot: PresentationRoot) {
      */
     fun inject(client: Any) {
         when (client) {
-            is SquadFragment -> injectDependencies(client)
+            is HomeActivity -> injectDependencies(client)
             else -> throw RuntimeException("Invalid view injection")
         }
     }
 
-    private fun injectDependencies(client: SquadFragment) {
-        client.viewModelFactory = presentationRoot.getSquadVmFactory()
+    private fun injectDependencies(client: HomeActivity) {
+        client.viewModelFactory = presentationRoot.homeVmFactory()
     }
 }

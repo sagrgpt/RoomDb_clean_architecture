@@ -24,6 +24,11 @@ class CricketRepository(
             }.distinctUntilChanged()
     }
 
+    fun getTeam(id: Long): Single<Team> {
+        return cache.getTeams(id)
+            .map { it.toTeam() }
+    }
+
     fun getProfile(playerId: Long): Single<PlayerProfile> {
         return cache.getPlayer(playerId)
             .map { it.toProfile() }

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CrickSquad</string>
+    <string name="player_badge_desc">Type of player</string>
+    <string name="player_image_desc">Player Image</string>
+    <string name="batting_stats_label">Batting Stats</string>
+    <string name="bowling_stats_label">Bowling Stats</string>
+    <string name="style_label">Style</string>
+    <string name="average">Average</string>
+    <string name="strike_rate">Strike Rate</string>
+    <string name="runs">Runs</string>
+    <string name="economy_rate">Economy Rate</string>
+    <string name="wickets_taken">Wickets Taken</string>
 </resources>

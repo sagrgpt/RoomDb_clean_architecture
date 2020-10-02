@@ -1,13 +1,13 @@
 package com.showcase.cricksquad.ui.common
 
 import androidx.annotation.UiThread
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
+import com.showcase.cricksquad.App
 import com.showcase.cricksquad.di.CompositionRoot
 import com.showcase.cricksquad.di.Injector
 import com.showcase.cricksquad.di.PresentationRoot
-import com.showcase.cricksquad.ui.MainActivity
 
-open class BaseFragment : Fragment(){
+open class BaseActivity : AppCompatActivity(){
 
     private var presentationRoot: PresentationRoot? = null
 
@@ -23,7 +23,7 @@ open class BaseFragment : Fragment(){
     }
 
     private fun getCompositionRoot(): CompositionRoot {
-        return (activity as MainActivity).getCompositionRoot()
+        return (application as App).getCompositionRoot()
     }
 
 }

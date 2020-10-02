@@ -1,5 +1,8 @@
 package com.showcase.cricksquad
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 data class Team(
     val teamId: Long,
     val fullName: String,
@@ -7,6 +10,7 @@ data class Team(
     val players: List<Player> = listOf()
 )
 
+@Parcelize
 data class Player(
     val id: Long,
     val teamId: Long,
@@ -14,7 +18,7 @@ data class Player(
     val position: String,
     val isCaptain: Boolean,
     val isKeeper: Boolean,
-)
+) : Parcelable
 
 data class PlayerProfile(
     val details: Player,

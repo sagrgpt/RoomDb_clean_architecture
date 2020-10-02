@@ -3,7 +3,7 @@ package com.showcase.cricksquad.di
 import com.showcase.cricksquad.repository.CricketRepository
 import com.showcase.cricksquad.repository.dataSource.CricketCache
 import com.showcase.cricksquad.repository.dataSource.CricketRemote
-import com.showcase.cricksquad.ui.SquadVmFactory
+import com.showcase.cricksquad.ui.HomeVmFactory
 
 /**
  * Second level component in the dependency graph.
@@ -15,8 +15,8 @@ class PresentationRoot(
     private val compositionRoot: CompositionRoot,
 ) {
 
-    fun getSquadVmFactory(): SquadVmFactory {
-        return SquadVmFactory(
+    fun homeVmFactory(): HomeVmFactory {
+        return HomeVmFactory(
             compositionRoot.getSchedulerProvider(),
             getCricketRepository()
         )
